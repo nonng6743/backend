@@ -38,7 +38,7 @@ export class AuthController {
 
   @Get('me')
   async me(@Req() req: Request) {
-    const userId = ((req as any).session as any)?.userId as string | undefined;
+    const userId = ((req as any).session as any)?.userId as number | undefined;
     if (!userId) return { user: null };
     return { userId };
   }
